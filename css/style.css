@@ -1,0 +1,506 @@
+/* =========================
+   DESIGN SYSTEM
+========================= */
+
+:root {
+    /* CORES */
+    --cor-primaria: #2E7D32;
+    --cor-primaria-clara: #66BB6A;
+    --cor-secundaria: #1565C0;
+    --cor-secundaria-clara: #42A5F5;
+    --cor-destaque: #F9A825;
+    --cor-fundo: #F5F5F5;
+    --cor-branco: #FFFFFF;
+    --cor-texto: #333333;
+    --cor-cinza: #757575;
+
+    /* TIPOGRAFIA */
+    --fonte-xs: 0.875rem;
+    --fonte-sm: 1rem;
+    --fonte-md: 1.25rem;
+    --fonte-lg: 1.75rem;
+    --fonte-xl: 2.5rem;
+
+    /* ESPAÇAMENTOS */
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 24px;
+    --espaco-xl: 32px;
+}
+
+
+/* =========================
+   ESTILO GERAL
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+h1 {
+    font-size: var(--fonte-xl);
+    color: var(--cor-primaria);
+    margin: 0;
+}
+
+h2 {
+    font-size: var(--fonte-lg);
+    color: var(--cor-secundaria);
+    margin-bottom: var(--espaco-sm);
+}
+
+h3 {
+    font-size: var(--fonte-md);
+    color: var(--cor-primaria);
+}
+
+section {
+    background-color: var(--cor-branco);
+    padding: var(--espaco-lg);
+    border-radius: 8px;
+}
+
+img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: var(--espaco-md);
+    padding: var(--espaco-lg);
+
+    background-color: var(--cor-primaria);
+}
+
+.cabecalho h1 {
+    color: var(--cor-branco);
+}
+
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+.navegacao {
+    margin-left: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-md);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+
+    padding: var(--espaco-sm) var(--espaco-md);
+
+    color: var(--cor-branco);
+    text-decoration: none;
+}
+
+
+/* =========================
+   SUBMENU
+========================= */
+
+.submenu {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    list-style: none;
+    margin: 0;
+    padding: var(--espaco-sm);
+
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+
+    z-index: 10;
+}
+
+.submenu a {
+    color: var(--cor-texto);
+}
+
+.item-dropdown:hover .submenu,
+.item-dropdown:focus-within .submenu {
+    display: block;
+}
+
+
+/* =========================
+   MENU HAMBÚRGUER
+========================= */
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+
+    color: var(--cor-branco);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* =========================
+   GRID DE 12 COLUNAS
+========================= */
+
+.grid-12 {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: var(--espaco-md);
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: var(--espaco-md);
+
+    box-sizing: border-box;
+}
+
+.col-12 {
+    grid-column: span 12;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+
+/* =========================
+   FLEXBOX - CARD DO ANIMAL
+========================= */
+
+.animal-card {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-lg);
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   FLEXBOX - FORMULÁRIO
+========================= */
+
+.form-acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   1 - CELULARES PEQUENOS
+========================= */
+
+@media (max-width: 479px) {
+
+    .grid-12 {
+        gap: var(--espaco-sm);
+        padding: var(--espaco-sm);
+    }
+
+    .col-6,
+    .col-4,
+    .col-3 {
+        grid-column: span 12;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navegacao {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle:checked ~ .navegacao .menu {
+        display: flex;
+    }
+}
+
+
+/* =========================
+   2 - CELULARES MAIORES
+========================= */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .grid-12 {
+        gap: var(--espaco-md);
+        padding: var(--espaco-md);
+    }
+
+    .col-6,
+    .col-4,
+    .col-3 {
+        grid-column: span 12;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navegacao {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle:checked ~ .navegacao .menu {
+        display: flex;
+    }
+}
+
+
+/* =========================
+   3 - TABLETS
+========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .grid-12 {
+        gap: var(--espaco-md);
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-4 {
+        grid-column: span 6;
+    }
+}
+
+
+/* =========================
+   4 - NOTEBOOKS E DESKTOPS
+========================= */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+    .grid-12 {
+        gap: var(--espaco-lg);
+        max-width: 1200px;
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-3 {
+        grid-column: span 3;
+    }
+}
+
+
+/* =========================
+   5 - MONITORES GRANDES
+========================= */
+
+@media (min-width: 1440px) {
+
+    .grid-12 {
+        max-width: 1400px;
+        gap: var(--espaco-xl);
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-3 {
+        grid-column: span 3;
+    }
+}
+/* BOTÕES */
+
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    padding: var(--espaco-sm) var(--espaco-lg);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Mouse sobre o botão */
+button:hover {
+    background-color: var(--cor-primaria-clara);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão selecionado pelo teclado */
+button:focus {
+    outline: 3px solid var(--cor-destaque);
+}
+
+/* Momento do clique */
+button:active {
+    transform: scale(0.97);
+}
+
+/* Botão desativado */
+button:disabled {
+    background-color: var(--cor-cinza);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+/* CAMPOS DO FORMULÁRIO */
+
+input {
+    padding: var(--espaco-sm);
+    border: 2px solid var(--cor-cinza);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+}
+
+/* Campo preenchido corretamente */
+input:focus:valid {
+    border-color: var(--cor-primaria);
+}
+
+/* Campo com erro */
+input:focus:invalid {
+    border-color: #D32F2F;
+}
+.badge {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+
+    font-size: var(--fonte-xs);
+
+    padding: var(--espaco-xs) var(--espaco-sm);
+    margin-left: var(--espaco-sm);
+
+    border-radius: 20px;
+}
+.alerta {
+    background-color: var(--cor-secundaria-clara);
+    color: var(--cor-texto);
+
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-md);
+
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: 6px;
+}
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--espaco-md);
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: var(--cor-branco);
+
+    padding: var(--espaco-xl);
+
+    border-radius: 8px;
+
+    max-width: 400px;
+    width: 100%;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fechar-modal {
+    display: inline-block;
+
+    margin-top: var(--espaco-md);
+    padding: var(--espaco-sm) var(--espaco-lg);
+
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+
+    text-decoration: none;
+    border-radius: 8px;
+}

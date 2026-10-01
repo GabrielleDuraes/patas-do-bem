@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ONG Patas do Bem</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <h1>ONG Patas do Bem</h1>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="navegacao">
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li class="item-dropdown">
+                    <a href="projetos.html">Projetos</a>
+
+                    <ul class="submenu">
+                        <li><a href="projetos.html">Doações</a></li>
+                        <li><a href="projetos.html">Voluntariado</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="cadastro.html">Seja voluntário</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main id="app" class="grid-12">
+
+        <section class="col-12">
+            <h2>Sobre nós</h2>
+
+            <p>
+                Somos uma ONG dedicada ao resgate, cuidado e adoção responsável
+                de animais em situação de abandono.
+            </p>
+        </section>
+
+        <section class="col-12">
+            <h2>Como ajudamos</h2>
+
+            <ul>
+                <li>Resgatamos animais em situação de abandono.</li>
+                <li>Oferecemos cuidados e atendimento veterinário.</li>
+                <li>Buscamos famílias para adoção responsável.</li>
+            </ul>
+        </section>
+
+        <section class="col-12">
+            <h2>Animais para adoção</h2>
+
+            <div id="lista-animais"></div>
+        </section>
+
+        <section class="col-12">
+            <h2>Entre em contato</h2>
+
+            <p>E-mail: contato@patasdobem.org</p>
+            <p>Telefone: (62) 99999-9999</p>
+        </section>
+
+    </main>
+<script src="../js/storage.js"></script>
+<script src="../js/animais.js"></script>
+<script src="../js/formulario.js"></script>
+<script src="../js/script.js"></script>
+    
+
+</body>
+
+</html>
